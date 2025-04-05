@@ -1,3 +1,12 @@
-Select first_name,last_name
+
+-- Select clause
+Select *
 from sakila.actor;
-select * from sakila.inventory;
+Select * from sakila.actor;
+-- Where clause
+Select * from sakila.actor where first_name="nick";
+-- Like
+select * 
+from sakila.film 
+where title like'%a' and title like 'a%';
+
