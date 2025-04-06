@@ -1,4 +1,3 @@
-
 -- Select clause
 Select *
 from sakila.actor;
@@ -9,4 +8,8 @@ Select * from sakila.actor where first_name="nick";
 select * 
 from sakila.film 
 where title like'%a' and title like 'a%';
+-- Group BY
+select first_name,min(actor_id)
+from actor 
+group by first_name;
 
