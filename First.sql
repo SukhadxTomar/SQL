@@ -68,3 +68,52 @@ from actor
 cross join customer;
 
 
+-- String functions
+
+-- length
+select first_name, length(first_name) as len
+from customer;
+
+-- upper and lower
+select first_name,upper(first_name) as uppercase
+from customer;
+select first_name,lower(first_name) as lowercase
+from customer;
+
+-- TRim
+ select first_name, rtrim(first_name) as trimmed
+ from customer;
+ SELECT TRIM('   SQL is fun   ') AS trimmed;
+ 
+ -- left,right
+ select first_name, left(first_name,3) as top3
+ from customer;
+ 
+-- Substring
+select first_name,substring(first_name,2,3) as ss
+from customer;
+
+-- Replace
+select first_name,replace(first_name,'A','z')
+from customer;
+
+-- locate
+select locate( 'R',BINARY 'SherrrRrr');
+
+-- case statement
+SELECT *, 
+  CASE 
+    WHEN amount > 5 THEN 'expensive'
+    WHEN amount <= 5 THEN 'cheap'
+  END AS sher
+FROM payment;
+
+
+-- Subqueries
+
+
+
+
+
+  
+
