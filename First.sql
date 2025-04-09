@@ -110,6 +110,13 @@ FROM payment;
 
 
 -- Subqueries
+SELECT  amount 
+from payment
+where amount > ( select avg(amount) from payment)
+select avg(amount)
+from payment;
+
+-- WIndow Functions
 
 
 
