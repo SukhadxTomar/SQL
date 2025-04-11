@@ -117,7 +117,21 @@ select avg(amount)
 from payment;
 
 -- WIndow Functions
-
+SELECT 
+    customer_id,
+    first_name,
+    last_name,
+    SUM(amount) AS total_spent,
+    RANK() OVER (ORDER BY SUM(amount) DESC) AS spending_rank
+FROM 
+    payment
+JOIN 
+    customer USING (customer_id)
+GROUP BY 
+    customer_id, first_name, last_name;
+    
+    
+-- 
 
 
 
