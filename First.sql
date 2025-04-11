@@ -130,11 +130,34 @@ JOIN
 GROUP BY 
     customer_id, first_name, last_name;
     
+-- CTE
+with cte1 as(
+ select amount ,rental_id
+ from payment
+)
+select * from cte1;
+
+-- Temporary tables
+
+create temporary table temp_table
+( first_name varchar(50),last_name varchar(50)
+);
     
--- 
+select * from temp_table;
+
+-- Stored Procedures
+ DELIMITER ##
+CREATE PROCEDURE get_actor_count()
+BEGIN
+    SELECT COUNT(*) AS total_actors
+    FROM actor;
+END ##
+DELIMITER ;
+CALL get_actor_count();
+
+
 
 
 
 
   
-
